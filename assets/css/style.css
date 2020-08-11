@@ -1,0 +1,130 @@
+:root {
+	--blur: 10px;
+	--black: #202020;
+	--white: #dedede;
+	--sand: #ffd245;
+	--dark-brown: #a42d10;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+
+html {
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+}
+
+body {
+	height: 100%;
+	width: 100%;
+}
+
+.layer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url("../img/clock.jpg");
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	filter: blur(10px); /* apply the blur */
+	-webkit-filter: blur(10px); /* apply the blur */
+	transform: scale(1.1);
+}
+
+.clock {
+	position: relative;
+	top: 50%;
+	left: 50%;
+	height: 60vw;
+	width: 60vw;
+	border-radius: 50%;
+	border: 10px solid var(--sand);
+	transform: translate(-50%, -50%);
+	box-shadow: 0 0 8px rgba(10, 10, 10, 0.5),
+		inset 0 0 8px rgba(10, 10, 10, 0.5);
+}
+
+.round {
+	display: block;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: var(--black);
+	z-index: 10;
+	box-shadow: 0 0 8px rgba(10, 10, 10, 0.75);
+}
+
+.hand {
+	position: absolute;
+	top: 50%;
+	right: 50%;
+	background-color: var(--dark-brown);
+	height: 5px;
+	box-shadow: 0 0 2px rgba(10, 10, 10, 0.5);
+	border-radius: 5px;
+	transform-origin: 100%;
+	transform: rotateZ(90deg);
+}
+
+.hand-hour {
+	width: 40%;
+}
+
+.hand-min {
+	width: 30%;
+}
+
+.hand-sec {
+	height: 2px;
+	width: 48%;
+}
+
+.roman__number {
+	position: absolute;
+	font-size: calc(14px + (20 - 14) * ((100vh - 200px) / (359 - 200)));
+	text-shadow: 0 0 4px rgba(10, 10, 10, 0.7);
+	transform: translate(-50%, -50%);
+}
+
+.roman__number-twelve {
+	top: 0.75em;
+	left: 50%;
+}
+
+.roman__number-three {
+	top: 50%;
+	left: calc(100% - 0.75em);
+}
+
+.roman__number-six {
+	top: calc(100% - 0.75em);
+	left: 50%;
+}
+
+.roman__number-nine {
+	top: 50%;
+	left: 0.75em;
+}
+
+@media screen and (orientation: landscape) {
+	.clock {
+		height: 60vh;
+		width: 60vh;
+	}
+	.roman__number {
+		font-size: calc(14px + (20 - 14) * ((100vw - 200px) / (359 - 200)));
+	}
+}
