@@ -128,3 +128,17 @@ body {
 		font-size: calc(14px + (20 - 14) * ((100vw - 200px) / (359 - 200)));
 	}
 }
+
+@media screen and (min-width: 1200px) {
+	.hand {
+		height: 8px;
+	}
+
+	.hand-sec {
+		height: 4px;
+	}
+
+	.roman__number {
+		font-size: 3rem;
+	}
+}
