@@ -13,13 +13,12 @@ function setTime() {
 			? "0" + time.getSeconds()
 			: time.getSeconds();
 	let angleSecondes = 90 + ANGLE_SEC * secondes;
-	sec_hand.style.transform = `rotateZ(${angleSecondes}deg)`;
 	let minutes = time.getMinutes();
 	let angleMinutes = 90 + ANGLE_MIN * minutes;
-	min_hand.style.transform = `rotateZ(${angleMinutes}deg)`;
-
 	let hour = time.getHours() - 12;
 	let angleHours = 90 + ANGLE_HOUR * hour;
+	sec_hand.style.transform = `rotateZ(${angleSecondes}deg)`;
+	min_hand.style.transform = `rotateZ(${angleMinutes}deg)`;
 	hours_hand.style.transform = `rotateZ(${angleHours}deg)`;
 }
 
