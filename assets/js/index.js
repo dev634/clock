@@ -14,17 +14,13 @@ function setTime() {
 			: time.getSeconds();
 	let angleSecondes = 90 + ANGLE_SEC * secondes;
 	sec_hand.style.transform = `rotateZ(${angleSecondes}deg)`;
-	if (secondes == 0) {
-		let minutes = time.getMinutes();
-		let angleMinutes = 90 + ANGLE_MIN * minutes;
-		min_hand.style.transform = `rotateZ(${angleMinutes}deg)`;
+	let minutes = time.getMinutes();
+	let angleMinutes = 90 + ANGLE_MIN * minutes;
+	min_hand.style.transform = `rotateZ(${angleMinutes}deg)`;
 
-		if (minutes == 0) {
-			let hour = time.getHours() - 12;
-			let angleHours = 90 + ANGLE_HOUR * hour;
-			hours_hand.style.transform = `rotateZ(${angleHours}deg)`;
-		}
-	}
+	let hour = time.getHours() - 12;
+	let angleHours = 90 + ANGLE_HOUR * hour;
+	hours_hand.style.transform = `rotateZ(${angleHours}deg)`;
 }
 
 function init() {
